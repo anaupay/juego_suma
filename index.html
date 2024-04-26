@@ -1,0 +1,340 @@
+<!DOCTYPE html>  
+
+<html>
+
+
+<head>
+
+<style>
+
+#num0{
+	font-family: serif;
+	font-size: 45pt;
+	margin:2pt;
+	width: 130pt;
+	height: 100px;
+	border-radius: 20px;
+	color: black;
+	border-color: red;
+	background-color: yellow;
+	-webkit-box-shadow: 3px 5px 5px black;
+}
+
+#num1{
+	font-family: serif;
+	font-size: 45pt;
+	margin:2pt;
+	width: 130pt;
+	height: 100px;
+	border-radius: 20px;
+	color: black;
+	border-color: red;
+	background-color: yellow;
+	-webkit-box-shadow: 3px 5px 5px black;
+}
+
+#num2{
+	font-family: serif;
+	font-size: 45pt;
+	margin:2pt;
+	width: 130pt;
+	height: 100px;
+	border-radius: 20px;
+	color: black;
+	border-color: red;
+	background-color: yellow;
+	-webkit-box-shadow: 3px 5px 5px black;
+}
+
+#num3{
+	font-family: serif;
+	font-size: 45pt;
+	margin:2pt;
+	width: 130pt;
+	height: 100px;
+	border-radius: 20px;
+	color: black;
+	border-color: red;
+	background-color: yellow;
+	-webkit-box-shadow: 3px 5px 5px black;
+}
+
+#num4{
+	font-family: serif;
+	font-size: 45pt;
+	margin:2pt;
+	width: 130pt;
+	height: 100px;
+	border-radius: 20px;
+	color: black;
+	border-color: red;
+	background-color: yellow;
+	-webkit-box-shadow: 3px 5px 5px black;
+}
+
+#num5{
+	font-family: serif;
+	font-size: 45pt;
+	margin:2pt;
+	width: 130pt;
+	height: 100px;
+	border-radius: 20px;
+	color: black;
+	border-color: red;
+	background-color: yellow;
+	-webkit-box-shadow: 3px 5px 5px black;
+}
+
+#numa{
+  font-family: serif;
+  background-color: lightgrey;
+  width: 150px;
+  height: 1px;
+  padding-top: 10px;
+  padding-bottom: 80px;
+  border: 10px solid red;
+  border-radius: 25px;
+  float:left;
+  font-size: 60px;
+}
+
+#numb{
+  font-family: serif;
+  background-color: lightgrey;
+  width: 150px;
+  height: 1px;
+  padding-top: 10px;
+  padding-bottom: 80px;
+  border: 10px solid red;
+  border-radius: 25px;
+  float:left;
+  font-size: 60px;
+}
+
+#simbolo{
+	font-family: palatino;
+	font-size: 45pt;
+	margin:2pt;
+	width: 130pt;
+	height: 100px;
+	border-radius: 20px;
+	color: black;
+	border-color: red;
+	background-color: yellow;
+	-webkit-box-shadow: 3px 5px 5px black;
+}
+
+
+#boton{
+	border-color: red;
+	font-size: 30pt;
+	color: black;
+	font-family: serif;
+	height: 60pt;
+	width: 300pt;
+	border-radius: 20px;
+	margin:auto; /* para centrar el boton */
+	display: block; /* para centrar el boton */
+	background-color: yellow;
+	-webkit-box-shadow: 3px 5px 5px black;
+}
+
+#caja {
+	font-family: serif;
+  background-color: lightgrey;
+  width: 140px;
+  height: 1px;
+  padding-bottom: 90px;
+  border: 10px solid red;
+  border-radius: 25px;
+  float:left;
+  font-size: 50px;
+  margin: 15px;
+
+}	
+
+
+/*  Efecto de borde de boton inicio */
+
+.glow-on-hover {
+    outline: none;
+    color: #fff;
+    background: #111;
+    cursor: pointer;
+    position: relative;
+    z-index: 0;
+}
+
+.glow-on-hover:before {
+    content: '';
+    background: linear-gradient(45deg, #ff0000, #ff7300, #fffb00, #48ff00, #00ffd5, #002bff, #7a00ff, #ff00c8, #ff0000);
+    position: absolute;
+    top: -2px;
+    left:-2px;
+    background-size: 400%;
+    z-index: -1;
+    filter: blur(5px);
+    width: calc(100% + 4px);
+    height: calc(100% + 4px);
+    animation: glowing 20s linear infinite;
+    opacity: 0;
+    transition: opacity .1s ease-in-out;
+    border-radius: 10px;
+}
+
+.glow-on-hover:active {
+    color: #000
+}
+
+.glow-on-hover:active:after {
+    background: transparent;
+}
+
+.glow-on-hover:hover:before {
+    opacity: 1;
+}
+
+.glow-on-hover:after {
+    z-index: -1;
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    /* background: #111;*/
+    left: 0;
+    top: 0;
+    border-radius: 10px;
+}
+
+@keyframes glowing {
+    0% { background-position: 0 0; }
+    50% { background-position: 400% 0; }
+    100% { background-position: 0 0; }
+}
+
+/*  fin de efecto de borde de boton */
+
+</style>
+
+<script>
+
+var beeperror = new Audio();
+beeperror.src = "beeperror2.wav";
+
+
+var beepaplauso = new Audio();
+beepaplauso.src = "beepaplauso.wav";
+
+var beepinicio = new Audio();
+beepinicio.src = "beepinicio3.wav";
+
+
+// genera enteros aleatorios desde un número hasta otro
+function aleatorio(min,max) {
+  return Math.floor(min + Math.random()*(max + 1 - min))
+}
+
+
+function barajar(array) {
+  var currentIndex = array.length, temporaryValue, randomIndex;
+
+  // Mientras queden elementos a mezclar...
+  while (0 !== currentIndex) {
+
+    // Seleccionar un elemento sin mezclar...
+    randomIndex = Math.floor(Math.random() * currentIndex);
+    currentIndex -= 1;
+
+    // E intercambiarlo con el elemento actual
+    temporaryValue = array[currentIndex];
+    array[currentIndex] = array[randomIndex];
+    array[randomIndex] = temporaryValue;
+  }
+
+  return array;
+}
+
+function corregir(a) {
+	if (a == rpt) {
+		beepaplauso.play();
+	}else {
+		beepaplauso.pause();
+		beepaplauso.currentTime = 0;
+		beeperror.play();
+	}	
+}
+
+
+function empezar() {
+	beepaplauso.pause();
+	beepaplauso.currentTime = 0;
+	beepinicio.play();	
+	
+	x = aleatorio(10,99);
+	y = aleatorio(10,99);
+	rpt = x+y;
+	
+	var num = []
+
+	num.push(rpt);
+	
+	cont = 1;
+	while (cont < 6){
+		a = aleatorio(rpt-30,rpt+30);
+		if ( num.includes(a) ) {	
+		}else {
+			num.push(a);
+			cont = cont +1;
+		}
+	}
+
+	barajar(num)
+	n0 = num[0];
+	n1 = num[1];
+	n2 = num[2];
+	n3 = num[3];
+	n4 = num[4];
+	n5 = num[5];		
+	
+	document.getElementById("numa").innerHTML = x;
+	document.getElementById("numb").innerHTML = y;
+	document.getElementById("num0").innerHTML = num[0];
+	document.getElementById("num1").innerHTML = num[1];
+	document.getElementById("num2").innerHTML = num[2];
+	document.getElementById("num3").innerHTML = num[3];
+	document.getElementById("num4").innerHTML = num[4];
+	document.getElementById("num5").innerHTML = num[5];
+}
+
+
+</script>
+
+</head>
+
+<body onload="empezar()">
+<br><br><br><br><br>
+<table align="center">
+<tr>
+<td><div id="numa" align="center" ></div></td>
+<td align="center" style="font-size: 80pt" >+</td>
+<td><div id="numb" align="center" ></div></td>
+</tr>
+<tr align="center"  >
+<td><button class="glow-on-hover" id="num0" onclick="corregir(n0)"> </button></td>
+<td><button class="glow-on-hover" id="num1" onclick="corregir(n1)"> </button></td>
+<td><button class="glow-on-hover" id="num2" onclick="corregir(n2)"> </button></td>
+</tr>
+<tr align="center">
+<td><button class="glow-on-hover" id="num3" onclick="corregir(n3)"> </button></td>
+<td><button class="glow-on-hover" id="num4" onclick="corregir(n4)"> </button></td>
+<td><button class="glow-on-hover" id="num5" onclick="corregir(n5)"> </button></td>
+</tr>
+<tr>
+<td colspan="3" align="center" ><button class="glow-on-hover" id="boton" onclick="empezar()" > Nuevo  ejercicio </button></td>
+</tr>
+</table>
+
+</body>
+	
+
+</html>
